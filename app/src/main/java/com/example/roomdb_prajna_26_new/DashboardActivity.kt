@@ -23,6 +23,8 @@ class DashboardActivity : AppCompatActivity() {
         val add : Button = findViewById(R.id.add)
         add.setOnClickListener {viewadd()}
 
+        val plan : Button = findViewById(R.id.plan)
+        add.setOnClickListener{viewplan()}
     }
 
     private fun viewlist() {
@@ -30,17 +32,16 @@ class DashboardActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    //private fun viewback() {
-       // val intent = Intent(this, PlannerActivity::class.java)
-       // startActivity(intent)
-    //}
-    //ini kalo nanti di nonaktiif bisa masuk
 
     private fun viewadd() {
         val intent = Intent(this, AddActivity::class.java)
         startActivity(intent)
-    } //ini juga addnya ga bisa :"(
+    }
 
+    private fun viewplan() {
+        val intent = Intent(this, PlannerActivity::class.java)
+        startActivity(intent)
+    }
 
 
 

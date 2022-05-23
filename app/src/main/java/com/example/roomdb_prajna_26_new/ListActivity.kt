@@ -32,17 +32,20 @@ class ListActivity : AppCompatActivity() {
 //  Bikin adapter untuk menghubungkan datnya
     override fun onStart(){
         super.onStart()
+        loadNote()
+    }
+
+    fun loadNote(){
         CoroutineScope(Dispatchers.IO).launch {
             val notes = db.noteDao().getNotes() //artinya kita ambil data
-            Log.d("ListActivity", "dbResponse::$notes" )
-            withContext(Dispatchers.Main){
+            Log.d("ListActivity", "dbResponse::$notes")
+            withContext(Dispatchers.Main) {
                 noteAdapter.setData(notes)
             }
 //                abis itu disini pake entiti yan kita pake gitu nantinya
 
 
-    }
-
+        }
     }
 
     fun setuplistener() {
@@ -74,6 +77,13 @@ class ListActivity : AppCompatActivity() {
 
             override fun onUpdate(note: Note) {
                 intentEdit(note.id, Constant.TYPE_UPDATE)
+            }
+
+            override fun onDelete(note: Note) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    db.noteDao().deleteNote(note)
+                    loadNote()
+                }
             }
         })
         list_note.apply{

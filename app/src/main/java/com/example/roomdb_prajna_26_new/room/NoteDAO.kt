@@ -20,11 +20,15 @@ interface NoteDAO {
     //ini pake suspend karena nanti akan pakai coroutines
 
     @Query("SELECT * FROM note")
-    fun getNotes():List<Note>
+    suspend fun getNotes():List<Note>
     //ini nampilin datanya dalam bentuk list dari mana? dari
     //dari Note gitu...
     //tadinya yang select * from note(notenya masih merah karena belum add entitynya
     //nambahinnya di Note.kt @Entity
 
+    @Query("SELECT * FROM note WHERE id=:note_id")
+    suspend fun getNote(note_id: Int):List<Note>
 
+//    membuat var id=> akan diapakai menjadi parameter
+//    jadi sesuai id, mana yang mau kita edit
 }

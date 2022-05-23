@@ -67,8 +67,13 @@ class ListActivity : AppCompatActivity() {
 
             //object perlu implement members
             override fun onClick(note: Note) {
+//                read detail note
                 intentEdit(note.id, Constant.TYPE_READ)
 
+            }
+
+            override fun onUpdate(note: Note) {
+                intentEdit(note.id, Constant.TYPE_UPDATE)
             }
         })
         list_note.apply{

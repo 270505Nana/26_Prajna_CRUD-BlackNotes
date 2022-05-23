@@ -22,6 +22,12 @@ class NoteAdapter (private val notes: ArrayList<Note>, private val listener: OnA
         holder.view.text_title.setOnClickListener{
             listener.onClick(note)
         }
+
+        holder.view.icon_edit.setOnClickListener{
+            listener.onUpdate(note)
+        }
+
+        holder.view.icon_delete.setOnClickListener{}
     }
 
     override fun getItemCount() = notes.size
@@ -37,6 +43,7 @@ class NoteAdapter (private val notes: ArrayList<Note>, private val listener: OnA
 
     interface OnAdapterListener{
         fun onClick(note: Note)
+        fun onUpdate(note: Note)
     }
 
 }

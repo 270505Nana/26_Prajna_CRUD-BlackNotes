@@ -49,18 +49,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_note" />
 
+
     <Button
-        android:visibility="gone"
         android:id="@+id/button_update"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="14dp"
         android:backgroundTint="@color/colorgrey"
         android:text="UPDATE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_save" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_note" />
 
     <ImageView
         android:id="@+id/imageView3"

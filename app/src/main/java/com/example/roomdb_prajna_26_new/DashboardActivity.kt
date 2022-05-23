@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_list.*
 
 class DashboardActivity : AppCompatActivity() {
@@ -12,19 +13,13 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-
-        //val back : Button = findViewById(R.id.back)
-        //ack.setOnClickListener {viewback()}
-
-        val list : Button = findViewById(R.id.list)
+        val list : ImageView = findViewById(R.id.button_list)
         list.setOnClickListener {viewlist()}
         //membuat buttonnya mengarah ke halaman selanjutnya, menggunakan intent
 
-        val add : Button = findViewById(R.id.add)
-        add.setOnClickListener {viewadd()}
+        val next : ImageView = findViewById(R.id.button_update)
+        next.setOnClickListener {viewnext()}
 
-        val plan : Button = findViewById(R.id.plan)
-        add.setOnClickListener{viewplan()}
     }
 
     private fun viewlist() {
@@ -32,21 +27,10 @@ class DashboardActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
-    private fun viewadd() {
-        val intent = Intent(this, AddActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun viewplan() {
+    private fun viewnext() {
         val intent = Intent(this, PlannerActivity::class.java)
         startActivity(intent)
     }
-
-
-
-
-
 
 
 }

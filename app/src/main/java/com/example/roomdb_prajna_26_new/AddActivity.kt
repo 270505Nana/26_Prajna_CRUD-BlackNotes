@@ -13,7 +13,6 @@ class AddActivity : AppCompatActivity() {
 
     //manggil DB, pertama buat variable DB nya dulu
 
-
     private val db by lazy { NoteDB(this) }
     private var noteId = 0
 
@@ -22,7 +21,6 @@ class AddActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add)
 
         setUpListener()
-
     }
 
     private fun setUpListener() {

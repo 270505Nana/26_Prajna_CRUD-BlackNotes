@@ -4,14 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 
 class PlannerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_planner)
 
-        val back : Button = findViewById(R.id.back)
-        back.setOnClickListener {viewback()}
+        val next : Button = findViewById(R.id.button_back)
+        next.setOnClickListener {viewback()}
     }
 
     private fun viewback() {
